@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Theme Made By www.w3schools.com - No Copyright -->
+    <title>Cicada 7431</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            font: 20px Montserrat, sans-serif;
+            line-height: 1.8;
+            color: #f5f6f7;
+        }
+
+        p {
+            font-size: 16px;
+        }
+
+        .margin {
+            margin-bottom: 20px;
+        }
+
+        .bg-1 {
+            background-color: #1abc9c;
+            /* Green */
+            color: #ffffff;
+        }
+
+        .bg-2 {
+            background-color: #474e5d;
+            /* Dark Blue */
+            color: #ffffff;
+        }
+
+        .bg-3 {
+            background-color: #ffffff;
+            /* White */
+            color: #555555;
+        }
+
+        .bg-4 {
+            background-color: #2f2f2f;
+            /* Black Gray */
+            color: #fff;
+        }
+
+        .container-fluid {
+            padding-top: 70px;
+            padding-bottom: 70px;
+        }
+
+        .navbar {
+            padding-top: 15px;
+            padding-bottom: 15px;
+            border: 0;
+            border-radius: 0;
+            margin-bottom: 0;
+            letter-spacing: 5px;
+        }
+
+        .navbar-nav li a:hover {
+            color: #1abc9c !important;
+        }
+
+        .size_pic {
+            width: 60px;
+            height: 60px;
+        }
+
+        .text_color {
+            color: #000;
+            font-size: 25px;
+        }
+
+        .size_text {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-default bg-2">
+
+        <div class="container">
+
+            <div class="navbar-header">
+
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+
+                <img src="{{ url_for('static',filename='styles/logos.png') }}" class="size_pic" />
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal1">
+                            Give Feedback</button>
+                        <!-- Modal -->
+                        <div id="myModal1" class="modal fade" role="dialog">
+                            <div class="modal-dialog">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title text_color control-label col-sm-12"></h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form action="/feedback/two" method="POST">
+                                            <div class="form-group">
+                                                <label class="text_color control-label col-sm-12">Name</label>
+                                                <input type="text" name="username" placeholder="Your Name"
+                                                    class="form-control" required />
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="hidden" name="level" value="2" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="text_color control-label col-sm-12">Email</label>
+                                                <input type="email" name="email" placeholder="Email"
+                                                    class="form-control" required />
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="text_color control-label col-sm-12">Feedback</label>
+                                                <textarea name="feedback" placeholder="enter your feedback here"
+                                                    class="form-control" rows="5" required></textarea>
+                                            </div>
+                                            <div class="form-group">
+
+                                                <input type="submit" name="" value="Submit"
+                                                    class="  btn btn-info btn-lg " />
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+    <!-- Third Container (Grid) -->
+    <div class="container-fluid bg-4 text-center">
+        <h3 class="margin">This is your second puzzle...can you do the addition of these images?</h3><br>
+        <div class="row">
+            <div class="col-sm-4" id="demo1">
+                <img src="{{ url_for('static',filename='styles/pic1.png') }}"
+                    onclick="document.getElementById('demo1').innerHTML='(10010100001111011)'" />
+            </div>
+            <div class="col-sm-4" id="demo2">
+                <img src="{{ url_for('static',filename='styles/pic2.png') }}"
+                    onclick="document.getElementById('demo2').innerHTML='(100001001010010101000001)'" />
+
+            </div>
+            <div class="col-sm-4" id="demo3">
+                <img src="{{ url_for('static',filename='styles/pic3.png') }}"
+                    onclick="document.getElementById('demo3').innerHTML='(100111100000011011111111)'" />
+
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-4 text-center">
+
+        <div class="row">
+            <div class="col-sm-4 text-center" id="demo4">
+                <img src="{{ url_for('static',filename='styles/pic4.png') }}"
+                    onclick="document.getElementById('demo4').innerHTML='(1101111010011010)'" />
+            </div>
+            <div class="col-sm-4" id="demo5">
+                <img src="{{ url_for('static',filename='styles/pic5.png') }}"
+                    onclick="document.getElementById('demo5').innerHTML='(1110010011111110000)'" />
+            </div>
+            <div class="col-sm-4" id="demo6">
+                <img src="{{ url_for('static',filename='styles/pic6.png') }}"
+                    onclick="document.getElementById('demo6').innerHTML='(10000011100010110100)'" />
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="container-fluid bg-2 text-center">
+        <p>&copy;Cicada 7431 created By CodingClub, SVIT</p>
+    </footer>
+
+</body>
+
+</html>

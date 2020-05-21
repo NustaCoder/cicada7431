@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Cicada 7431</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            font: 20px Montserrat, sans-serif;
+            line-height: 1.8;
+            color: #f5f6f7;
+        }
+
+        p {
+            font-size: 16px;
+        }
+
+        .margin {
+            margin-bottom: 20px;
+        }
+
+        .bg-1 {
+            background-color: #1abc9c;
+            color: #ffffff;
+        }
+
+        .bg-2 {
+            background-color: #474e5d;
+            color: #ffffff;
+        }
+
+        .bg-3 {
+            background-color: #ffffff;
+            color: #555555;
+        }
+
+        .bg-4 {
+            background-color: #2f2f2f;
+            color: #fff;
+        }
+
+        .container-fluid {
+            padding-top: 70px;
+            padding-bottom: 70px;
+        }
+
+        .navbar {
+            padding-top: 15px;
+            padding-bottom: 15px;
+            border: 0;
+            border-radius: 0;
+            margin-bottom: 0;
+            letter-spacing: 5px;
+        }
+
+        .navbar-nav li a:hover {
+            color: #1abc9c !important;
+        }
+
+        .size_pic {
+            width: 60px;
+            height: 60px;
+        }
+
+        .text_color {
+            color: #000;
+            font-size: 25px;
+        }
+
+        .size_text {
+            font-size: 20px;
+        }
+
+        .radio_text {
+            font-size: 15px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-default bg-2">
+
+        <div class="container">
+
+            <div class="navbar-header">
+
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+
+                <img src="{{ url_for('static',filename='styles/logos.png') }}" class="size_pic" />
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal1">
+                            Give Feedback</button>
+                        <!-- Modal -->
+                        <div id="myModal1" class="modal fade" role="dialog">
+                            <div class="modal-dialog">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title text_color control-label col-sm-12"></h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form action="/feedback/six" method="POST">
+                                            <div class="form-group">
+                                                <label class="text_color control-label col-sm-12">Name</label>
+                                                <input type="text" name="username" placeholder="Your Name"
+                                                    class="form-control" required />
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="text_color control-label col-sm-12">Email</label>
+                                                <input type="email" name="email" placeholder="Email"
+                                                    class="form-control" required />
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="hidden" name="level" value="6" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="text_color control-label col-sm-12">Feedback</label>
+                                                <textarea name="feedback" placeholder="enter your feedback here"
+                                                    class="form-control" rows="5" required></textarea>
+                                            </div>
+                                            <div class="form-group">
+
+                                                <input type="submit" name="" value="Submit"
+                                                    class="  btn btn-info btn-lg " />
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+    <div class="container-fluid bg-4 text-center">
+        <h3 class="margin">Sixth Puzzle</h3><br>
+        <div class="row">
+            <div class="col-sm-4">
+            </div>
+            <div class="col-sm-4">
+                <p>So you have reached till here, Congrats!!! you can solve any puzzle now. so why should i tell you a
+                    puzzle in this one. You can find it on your own. You know the drill...</p>
+
+
+                <p id="demo">still can't find the puzzle? <span
+                        onclick="document.getElementById('demo').innerHTML='Use your senses'"> Click here to get
+                        hint</span></p>
+            </div>
+            <div class="col-sm-4">
+
+            </div>
+        </div>
+    </div>
+
+    <footer class="container-fluid bg-2 text-center">
+        <p>&copy;Cicada 7431 created By CodingClub, SVIT</p>
+    </footer>
+
+</body>
+
+</html>
+<!--
+    if you see a meaningful word in first line...then it is your pattern in which other meaningful words are written.
+-->
+<!--
+    @whic9h12 dem Gesetz steht ein Türhüter. Zu di111esem Türhüter kommt ein Mann vom Lande und bittet um Eint@eng1ish57ritt in das Gesetz. Aber der Türhüter sagt, daß er ihm jetzt den Eintritt nicht gewähr@18en könne. Der Mann ü!2!@berlegt und fragt dann, ob er also später werde eintreten dürfen. \"Es is21t möglich\", sagt der Türhüter, \"jetzt aber 222545456 nicht.\" Da das Tor zum Geset12z offensteh@t wie immer und der Türhüter beiseite tritt, bückt si232ch d@er Mann, um durch das Tor in das In2nere zu sehen. Als der Türhüt@45er das mer@kt, lacht er u@nd sagt: \"Wenn es d12ich so lockt, v@ersuche es doch, trotz meines Verbo@ter. Von Saa@l zu Saal stehn aber Türhüte12r, einer mächtiger als der andere. Schon den Anblick des dritt@en kann nicht einmal ich me21hr ertragen.\" Sol@che Schwie1214rigkeiten hat der Maafddnn vom Lande nicht erwar@tet; das G12esetz soll doch jedem und im@mer zugän@glich sein, denkt er, aber als er jetzt den Tü55@5rhüter in seinem Pelzmantel genau@er ansi@e2ht, seine große Spitzn@a1#se, den langen dünnen, schwarze12n @tata@1word11rischen Bart, entsch@ließt er sich, doch lieber z1u warten, bis er die Erlaubnis zum Eint43ritt bekommt. Der Tür@hüter gibt i11hm einen Schem@el und läßt ihn seit@wärts von der Tür sich nie52dersetzen. Do123rt si@tzt er Tage und Jah@re.Vo@r dem Gesetz steht ein Türhüter. Zu di111esem Türhüter kommt ein Mann vom Lande und bittet um Eintritt in das Gesetz. Aber der Türhüter sagt, daß er ihm jetzt den Eintritt nicht gewä@hren könne. Der Mann ü!2!@berlegt und fragt dann, ob er also später werde eintreten dürfen. \"Es is21t möglich\", sagt der Türhüter, \"jetzt aber 222545456 nicht.\" Da das Tor zum Gez offensteh@t wie immer und der Türhüter beiseite tritt, bückt si232ch der Mann, um durch das Tor in das In2nere zu sehen. Als der Türhüt@45er das merkt, lacht er und sagt: \"Wenn es d12ich so lockt, v@ersuche es doch, trotz meines Verbo@ter. Von Saal zu Saal stehn aber Tü@rhüte12r, einer mächtiger als der an@has321dere. Schon den Anblick des dritten kann nicht einmal ich me21hr ertragen.\" Sol@che Schwie1214rigkeiten hat der Maafddnn vom Lande nicht erwartet; das G12esetz soll doch jedem und im@mer zugän@glich sein, denkt er, aber als er jetzt den Tü555rhüter in seinem Pelzmantel genau@er ansi@e2ht, seine große Spitzna11se, den langen dünnen, schwarze12n tatarischen Bart, entsch@ließt er sich, doch lieber z1u warten, bis er die Erlaubnis zum Eint43ritt bekommt. Der Tür@hüter gibt i11hm einen Schemel und läßt ihn seitwärts von der Tür sich nie52dersetzen. Do123rt si@tzt er Tage und Jahre.Vo@r dem Gesetz steht ein Türhüter. Zu di111esem Türhüter kommt ein Mann vom Lande und bittet um Eintritt in das Gesetz. Aber der Türhüter sagt, daß er ihm jetzt den Eintritt nicht gewähren könne. Der Mann ü!2!@berlegt und fragt dann, ob er also später werde eintreten dürfen. \"Es is21t möglich\", sagt der Türhüter, \"jetzt aber 222545456 nicht.\" Da das Tor zum Geset12z offensteh@t wie immer und der Türhüter beiseite tritt, bückt si232ch der Mann, um durch das Tor in das In2nere zu sehen. Als der Türhüt@45er das merkt, lacht er und sagt: \"Wenn es d12ich so lockt, v@ersuche es doch, trotz meines Verbo@ter. Von Saal zu Saal stehn aber Türhüte12r, einer mächtiger als der andere. Schon den Anblick des dritten kann nicht einmal ich me21hr ertragen.\" Sol@che Schwie1214rigkeiten hat der Maafddnn vom Lande nicht erwartet; das G12esetz soll doch jedem und im@mer zugän@glich sein, denkt er, aber als er jetzt den Tü555rhüter in seinem Pelzmantel genau@er ansi@e2ht, seine große Spitzna11se, den langen dün@t1h1ree11nen, schwarze12n tatarischen Bart, entsch@ließt er sich, doch lieber z1u warten, bis er die Erlaubnis zum Eint43ritt bekommt. Der Tür@hüter gibt i11hm einen Schemel und läßt ihn seitwärts von der Tür sich nie52dersetzen. Do123rt si@tzt er Tage und Jahre.Vo@r dem Gesetz steht ein Türhüter. Zu di111esem Türhüter kommt ein Mann vom Lande und bittet um Eintritt in das Gesetz. Aber der Türhüter sagt, daß er ihm jetzt den Eintritt nicht gewähren könne. Der Mann ü!2!@berlegt und fragt dann, ob er also später werde eintreten dürfen. \"Es is21t möglich\", sagt der Türhüter, \"jetzt aber 222545456 nicht.\" Da das Tor zum Geset12z offensteh@t wie immer und der Türhüter beiseite tritt, bückt si232ch der Mann, um durch das Tor in das In2nere zu sehen. Als der Türhüt@45er das merkt, lacht er und sagt: \"Wenn es d12ich so lockt, v@ersuche es doch, trotz meines Verbo@ter. Von Saal zu Saal stehn aber Türhüte12r, einer mächtiger als der andere. Schon den Anblick des dritten kann nicht einmal ich me21hr ertragen.\" Sol@che Schwie1214rigkeiten hat der Maafddnn vom Lande nicht erwartet; das G12esetz soll doch jedem und im@mer zugän@glich sein, denkt er, aber als er jetzt den Tü555rhüter in seinem Pelzmantel genau@er ansi@e2ht, seine große Spitzna11se, den langen dünnen, schwarze12n tatarischen Bart, entsch@ließt er sich, doch lieber z1u warten, bis er die Erlaubnis zum Eint43ritt bekommt. Der Tür@hüter gibt i11hm einen Schemel und läßt ihn seitwärts von der Tür sich nie52dersetzen. Do123rt si@tzt er Tage und Jahre.Vo@r dem Gesetz steht ein Türhüter. Zu di111esem Türhüter kommt ein Mann vom Lande und bittet um Eintritt in das Gesetz. Aber der Türhüter sagt, daß er ihm jetzt den Eintritt nicht gewähren könne. Der Mann ü!2!@berlegt und fragt dann, ob er also später werde eintreten dürfen. \"Es is21t möglich\", sagt der Türhüter, \"jetzt aber 222545456 nicht.\" Da das Tor zum Geset12z offensteh@t wie immer und der Türhüter beiseite tritt, bückt si232ch der Mann, um durch das Tor in das In2nere zu sehen. Als der Türhüt@45er das merkt, lacht er und sagt: \"Wenn es d12ich so lockt, v@ersuche es doch, trotz meines Verbo@ter. Von Saal zu Saal stehn aber Türhüte12r, einer mächtiger als der andere. Schon den Anblick des @consecutive82 kann nicht einmal ich me21hr ertragen.\" Sol@che Schwie1214rigkeiten hat der Maafddnn vom Lande nicht erwartet; das G12esetz soll doch jedem und im@mer zugän@glich sein, denkt er, aber als er jetzt den Tü555rhüter in seinem Pelzmantel genau@er ansi@e2ht, seine große Spitzna11se, den langen dünnen, schwarze12n tatarischen Bart, entsch@ließt er sich, doch lieber z1u warten, bis er die Erlau@doub1e34bnis zum Eint43ritt bekommt. Der Tür@hüter gibt i11hm einen Schemel und läßt ihn seitwärts von der Tür sich nie52dersetzen. Do123rt si@tzt er Tage und Jahre.Vo@r dem Gesetz steht ein Türhüter. Zu di111esem Türhüter kommt ein Mann vom Lande und bittet um Eintritt in das Gesetz. Aber der Türhüter sagt, daß er ihm jetzt den Eintritt nicht gewähren könne. Der Mann ü!2!@berlegt und fragt dann, ob er also später werde eintreten dürfen. \"Es is21t möglich\", sagt der Türhüter, \"jetzt aber 222545456 nicht.\" Da das Tor zum Ges@1etter123232setz offensteh@t wie immer und der Türhüter beiseite tritt, bückt si232ch der Mann, um durch das Tor in das In2nere zu sehen. Als der Türhüt@45er das merkt, lacht er und sagt: \"Wenn es d12ich so lockt, v@ersuche es doch, trotz meines Verbo@ter. Von Saal zu Saal stehn aber Türhüte12r, einer mächtiger als der andere. Schon den Anblick des dritten kann nicht einmal ich me21hr ertragen.\" Sol@che Schwie1214rigkeiten hat der Maafddnn vom Lande nicht erwartet; das G12esetz soll doch jedem und im@mer zugän@glich sein, denkt er, aber als er jetzt den Tü555rhüter in seinem Pelzmantel genau@er ansi@e2ht, seine große Spitzna11se, den langen dünnen, schwarze12n tatarischen Bart, entsch@ließt er sich, doch lieber z1u warten, bis er die Erlaubnis zum Eint43ritt bekommt. Der Tür@hüter gibt i11hm einen Schemel und läßt ihn seitwärts von der Tür sich nie52dersetzen. Do123rt si@tzt er Tage und Jahre.
+-->
