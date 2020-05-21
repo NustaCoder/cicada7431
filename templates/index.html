@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{ url_for('static',filename='styles/main.css') }}">
     <link rel="manifest" href="/site.webmanifest">
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -91,6 +92,10 @@
         .control-label {
             text-align: left;
         }
+
+        .a_tag {
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -114,8 +119,8 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal1">
-                            Give Feedback</button>
+                    <li><a type="button" class="a_tag" data-toggle="modal" data-target="#myModal1">
+                            Give Feedback</a>
                         <!-- Modal -->
                         <div id="myModal1" class="modal fade" role="dialog">
                             <div class="modal-dialog">
@@ -176,17 +181,19 @@
                 <img src="{{ url_for('static',filename='styles/logos.png') }}" class="size_pic1" />
                 <p>Cicada 7431 is a nickname given to this Challenge that has posted a set of puzzles to be solved by
                     the ardent
-                    students . The first internet puzzle from Coding Club Svit. The name of the challenge is derived
+                    students . The first internet puzzle from Coding Club Svit.
+                    The name of the challenge is derived
                     from
                     the <strong>Cicada 3301</strong>. Some have claimed that Cicada 3301 is a secret society with
-                    the goal of improving cryptography, privacy and anonymity. In Cicada 7431 the intent is to develop
+                    the goal of improving cryptography, privacy and anonymity. In Cicada 7431 the intent is to
+                    develop
                     "intelligent individuals" by presenting a series of puzzles.</p>
                 <p>The puzzles are all focused on your problem solving skills. You can always solve the puzzle by simple
                     pen
                     and paper or let the computer do it for you...The choice is yours!!!</p>
                 <p>&nbsp;</p>
-                <h4>Total
-                    <strong>{{cnt}}</strong> challengers have attempted Cicada 7431 till now.</h4>
+                <h4><i>Total
+                        <strong>{{cnt}}</strong> challengers have attempted Cicada 7431 till now.</h4></i>
                 <p>&nbsp;</p>
                 <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">
                     Let's Play</button>

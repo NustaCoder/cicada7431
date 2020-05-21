@@ -73,6 +73,10 @@
             font-size: 25px;
         }
 
+        .a_tag {
+            cursor: pointer;
+        }
+
         .size_text {
             font-size: 20px;
         }
@@ -98,8 +102,8 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal1">
-                            Give Feedback</button>
+                    <li><a type="button" class="a_tag" data-toggle="modal" data-target="#myModal1">
+                            Give Feedback</a>
                         <!-- Modal -->
                         <div id="myModal1" class="modal fade" role="dialog">
                             <div class="modal-dialog">
@@ -160,7 +164,8 @@
                 <p>.</p>
                 <p>.</p>
                 <p>.</p>
-                <p id="demo1" onmouseover="document.getElementById('demo1').innerHTML='You should flip the screen...'"
+                <p class="a_tag" id="demo1"
+                    onmouseover="document.getElementById('demo1').innerHTML='You should flip the screen...'"
                     onmouseout="document.getElementById('demo1').innerHTML='This isn\'t the right view...!!!'">HINT :
                     Fly over me...</p>
 
