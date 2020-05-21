@@ -1,1 +1,1 @@
-web: gunicorn lsd:app
+web gunicorn dom:app
