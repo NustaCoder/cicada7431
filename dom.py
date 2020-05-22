@@ -28,7 +28,11 @@ def level_one():
 
     if a and b and request.method == 'POST':
         id = mongo.db.login.insert({"name": a, "email": b})
-    return render_template("one.html", a=a, b=b)
+        return render_template("one.html", a=a, b=b)
+    else:
+        return render_template("one.html")
+        
+       
 
 
 @app.route('/feedback/<id>', methods=['POST'])
@@ -44,7 +48,7 @@ def send_feedback(id):
     if id == "index":
         return redirect(url_for('index'))
     elif id == "one":
-        return redirect(url_for('level_one'))
+        return redirect(url_for('index'))
     elif id == "two":
         return redirect(url_for('toLevelTwo'))
     elif id == "three":
